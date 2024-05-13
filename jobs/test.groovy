@@ -1,6 +1,12 @@
 pipelineJob('test_seed_job') {
-    triggers {
-        cron('H * * * *')
+     properties {
+        pipelineTriggers {
+            triggers {
+               cron{
+                spec('H * * * *')
+               }
+            }
+        }
     }
     definition {
         cps {
